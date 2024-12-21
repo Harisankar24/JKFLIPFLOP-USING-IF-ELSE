@@ -35,14 +35,45 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 **Procedure**
 
 /* write all the steps invloved */
+Step1: Define the specifications and initialize the design. 
+Step2: Declare the name of the entity and architecture by using VHDL source code. 
+Step3: Write the source code in VERILOG. 
+Step4: Check the syntax and debug the errors if found, obtain the synthesis report. 
+Step5: Verify the output by simulating the source code. 
+Step6: Write all possible combinations of input using the test bench. 
+Step7: Obtain the place and route report.  
 
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
+module expe7(clk, rst, q); 
+    input clk; 
+    input rst; 
+    output [3:0]q; 
+  reg [3:0]q; 
+  reg [3:0]x=0; 
+  always @ (posedge(clk) or posedge(rst)) 
+  begin 
+  if (rst==1'b1) 
+  begin 
+  q=4'b0; 
+  end 
+  else  
+  begin 
+  x=x+1'b1; 
+  end 
+  q=x; 
+  end 
+  endmodule
 
 **RTL LOGIC FOR FLIPFLOPS**
+![Screenshot 2024-12-21 091815](https://github.com/user-attachments/assets/197e0f4c-9335-4618-bb74-36ec6f6b0e86)
+
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![Screenshot 2024-12-21 092009](https://github.com/user-attachments/assets/a18446ef-ae5f-4de6-bb7b-5f9688aab483)
 
 **RESULTS**
+Thus the OUTPUT’s of Synchronous and Asynchronous  counter are verified by synthesizing and 
+simulating the  VERILOG code. 
